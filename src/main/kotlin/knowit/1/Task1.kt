@@ -6,7 +6,7 @@ import java.io.File
  * In the file 'numbers.txt' are all numbers from 1 to 100_000 apart from one. Find which one
  * They are in random order separated by ','
 **/
-fun main(args: Array<String>) {
+fun main() {
 
     var checksum = 0
     for (i in 1..100_000) {
