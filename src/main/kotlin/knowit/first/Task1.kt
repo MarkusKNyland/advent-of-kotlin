@@ -1,4 +1,4 @@
-package knowit.`1`
+package knowit.first
 
 import java.io.File
 
@@ -14,7 +14,7 @@ fun main() {
     }
 
     var sum = 0
-    File("src/main/kotlin/knowit/1/numbers.txt")
+    File("src/main/kotlin/knowit/first/numbers.txt")
         .forEachLine { line ->
             line.split(",")
                 .forEach { number ->
