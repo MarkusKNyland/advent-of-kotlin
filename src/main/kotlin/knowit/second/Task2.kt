@@ -15,18 +15,19 @@ package knowit.second
  * skal få en pakke levert. Hvor mange av disse pakkene vil faktisk bli levert?
  **/
 fun main() {
-    var i = 0
+    var packageNumber = 0
     val delivered = ArrayList<Int>()
 
-    while (i < 5_433_000) {
-        if (getLastDigit(i) == 7) {
-            i += getClosestPrime(i)
+    while (packageNumber < 10_000) {
+        if (getLastDigit(packageNumber) == 7) {
+            packageNumber += getClosestPrime(packageNumber)
         } else {
-            delivered.add(i)
+            delivered.add(packageNumber)
         }
-        i++
+        packageNumber++
     }
     println(delivered.size)
+    println(delivered)
 }
 
 private fun getClosestPrime(number: Int): Int {
