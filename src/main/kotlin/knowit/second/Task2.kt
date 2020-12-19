@@ -18,8 +18,8 @@ fun main() {
     var packageNumber = 0
     val delivered = ArrayList<Int>()
 
-    while (packageNumber < 10_000) {
-        if (getLastDigit(packageNumber) == 7) {
+    while (packageNumber < 5_433_000) {
+        if (containsDigitSeven(packageNumber)) {
             packageNumber += getClosestPrime(packageNumber)
         } else {
             delivered.add(packageNumber)
@@ -30,6 +30,13 @@ fun main() {
     println(delivered)
 }
 
+private fun containsDigitSeven(packageNumber: Int): Boolean {
+    for (char in packageNumber.toString()) {
+        if (char == '7') return true
+    }
+    return false
+}
+
 private fun getClosestPrime(number: Int): Int {
     for (i in number downTo 2) {
         if (isPrimeNumber(i)) return i
@@ -37,10 +44,6 @@ private fun getClosestPrime(number: Int): Int {
 
     // shouldn't happen
     return 0
-}
-
-private fun getLastDigit(number: Int): Int {
-    return number % 10
 }
 
 private fun isPrimeNumber(number: Int): Boolean {
